@@ -1,17 +1,16 @@
-#!/usr/bin/python
-
 import json
 
 from flask import Flask
 from flask import request
 from flask import make_response
 
-from google.appengine.ext import blobstore
 from google.appengine.api import images
+from google.appengine.api import wrap_wsgi_app
 
 JSON_MIME_TYPE = 'application/json'
 
 app = Flask(__name__)
+app.wsgi_app = wrap_wsgi_app(app.wsgi_app)
 
 @app.route('/image-url', methods=['GET'])
 def image_url():

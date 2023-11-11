@@ -5,14 +5,7 @@ Resize your image files on Google Cloud storage with [Images Python API](https:/
 
 ### Important note ☢️
 
-This project runs on the App Engine Python 2.7 Runtime and, even though Python 2.7 is not maintaned anymore, Google has [committed to providing long term support for the App Engine Python 2.7 runtime](https://cloud.google.com/appengine/docs/standard/long-term-support#our_commitment), continuing their _"more than decade-long history of supporting your apps"_.
-
-Still, you need to be aware that:
-> As communities stop maintaining versions of their languages, your app may be exposed to vulnerabilities for which no publicly available fix exists. Thus, continuing to run your app in some App Engine runtimes involves more risk than upgrading to a runtime that has a community supported language.
-
-Also, you should know that if Google ever decides to deprecate any of the APIs used by this project, it will first be announced at their [deprecations page](https://cloud.google.com/appengine/docs/deprecations/).
-
-For more discussions on this topic, please refer to [issue #3](https://github.com/albertcht/python-gcs-image/issues/3).
+This fork was updated to the App Engine Python 3.12 Runtime.
 
 ## Setup
 
@@ -22,13 +15,7 @@ For more discussions on this topic, please refer to [issue #3](https://github.co
 git clone https://github.com/albertcht/python-gcs-image.git
 ```
 
-2. Install the requirements. (Flask)
-
-```
-pip install -r requirements.txt -t lib
-```
-
-3. Deploy to App Engine.
+2. Deploy to App Engine.
 
 ```
 gcloud app deploy
@@ -39,7 +26,7 @@ gcloud app deploy
 1. Get a serving url from existed file on Google Cloud Storage:
 
 ```
-curl https://PROJECT_NAME.appspot.com/image-url?bucket=mybuckey&image=image_name.jpg
+curl https://python-image-url.PROJECT_NAME.appspot.com/image-url?bucket=mybuckey&image=image_name.jpg
 ```
 
 2. It will return a url that looks something like:
