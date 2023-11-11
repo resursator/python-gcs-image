@@ -2,7 +2,7 @@ runtime: python312
 service: python-image-url
 app_engine_apis: true
 handlers:
-- url: /image-url/.*
+- url: /.*
   secure: always
   redirect_http_response_code: 301
   script: auto
